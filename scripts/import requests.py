@@ -19,7 +19,7 @@ class PDF(FPDF):
         self.cell(0, 10, f"Página {self.page_no()}", 0, 0, "C")
 
 # URL de la página a scrapear
-url = 'https://www.wikipedia.org'
+url = 'https://grafana.marandu.com.ar/d/CTGUbUIVk/grupo-electrogeno?orgId=1'
 
 # Realizar la solicitud HTTP
 response = requests.get(url)
@@ -43,4 +43,4 @@ else:
     pdf.cell(0, 10, txt='Error al acceder a la página', ln=True, align='C')
 
 # Guardar el PDF en un archivo
-pdf.output("output.pdf")
+pdf.output("resultado.pdf")
