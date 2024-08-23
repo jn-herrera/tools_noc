@@ -37,10 +37,12 @@ Si encuentras problemas, verifica que todos los pasos se hayan completado sin er
 
 Resultados desde consola:
 
-Linux:
+Linux: /n
+
 ![image](https://github.com/user-attachments/assets/daa3c493-2e5c-4b3e-82d4-43587f7c47f9)
 
-Windows:
+Windows: /n
+
 ![image](https://github.com/user-attachments/assets/8a671694-c33c-42a5-b509-e1d9b39d385e)
 
 
