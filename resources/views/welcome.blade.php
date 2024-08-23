@@ -1,4 +1,3 @@
-<!-- resources/views/welcome.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @vite(['resources/css/app.css'])
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Estilos para el área de código */
         .code-container {
@@ -48,16 +48,7 @@
         <!-- Usar clases responsive para el diseño de los botones -->
         <div class="flex flex-col md:flex-row gap-5">
             <div class="flex-1 px-4">
-                <button class="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 mb-2">Scraping -
-                    Porcentajes grupos electrógenos %</button>
-                <button class="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 mb-2">Mail -
-                    Degradaciones/Caidas</button>
-                <button class="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">Botón 3</button>
-            </div>
-            <div class="flex-1 px-4">
-                <button class="w-full py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600 mb-2">Botón 4</button>
-                <button class="w-full py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600 mb-2">Botón 5</button>
-                <button class="w-full py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600">Botón 6</button>
+                <button id="run-script-btn" class="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 mb-2">Scraping - Porcentajes grupos electrógenos %</button>
             </div>
         </div>
     </div>
@@ -65,24 +56,29 @@
     <div class="mt-8 mb-10 p-8 bg-white shadow-md rounded-lg max-w-4xl mx-auto">
         <div>
             <p>Resultado</p>
-            <!-- Área de código con botón de copiar -->
-            <div class="code-container">
-                <button class="copy-button" onclick="copyToClipboard()">Copiar código</button>
-                <pre><code id="code-block">
-&lt;!-- resources/views/welcome.blade.php --&gt;
+            <!-- Área para mostrar el resultado del script -->
+            <div id="script-output" class="code-container">
+                <pre><code id="code-block"></code></pre>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        $(document).ready(function() {
+            $('#run-script-btn').click(function() {
+                $.ajax({
+                    url: '/run-script',
+                    method: 'GET',
+                    success: function(response) {
+                        $('#code-block').text(response.output);
+                    },
+                    error: function(xhr) {
+                        $('#code-block').text('Error: ' + xhr.responseJSON.output);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 
-            .copy-button:hover {
-                background-color: #2b6cb0;
-            }
-            pre {
-                margin: 0;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body class="bg-gray-100"&gt;
-        &lt;div class="text-2xl font-semibold text-center mb-6 mt-8"&gt;Herramientas NOC&lt;/div&gt;
-        &lt;div class="p-8 bg-white shadow-md rounded-lg max-w-4xl mx-auto"&gt;
-            &lt;!-- Usar clases responsive para el diseño de los botones --&gt;
-            &lt;div class="flex flex-col md:flex-row gap-5"&gt;
-                &lt;div class="flex-1 px-
+</html>
