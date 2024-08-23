@@ -19,8 +19,8 @@ Después, instala los navegadores necesarios para Playwright, en este caso Chrom
 
 
 **Configurar Laravel:**
-Inicia el servidor de Laravel para que la aplicación esté disponible con **php artisan serve**
-Compila y carga los estilos utilizando Vite con **npm run dev**
+1- Inicia el servidor de Laravel para que la aplicación esté disponible con **php artisan serve**
+2- Compila y carga los estilos utilizando Vite con **npm run dev**
 
 
 **Ejecutar el proyecto:**
