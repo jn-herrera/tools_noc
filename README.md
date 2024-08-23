@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/dc8043b6-e006-4e51-b141-08524209c795)
 
 
-Puedes correr el script desde consola con el archivo import_requests.py ubicado en la carpeta public.
+Puedes correr el script desde consola con el archivo import_requests.py ubicado en la carpeta public/scripts.
 
 
 **Cómo ejecutar el proyecto desde la web:**
