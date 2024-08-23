@@ -1,7 +1,10 @@
 ![image](https://github.com/user-attachments/assets/dc8043b6-e006-4e51-b141-08524209c795)
 
 
-**Cómo ejecutar el proyecto:**
+Puedes correr el script desde consola con el archivo import_requests.py ubicado en la carpeta public.
+
+
+**Cómo ejecutar el proyecto desde la web:**
 
 Actualizar Python:
 
